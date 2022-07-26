@@ -1,4 +1,4 @@
 # Medical_Reports_Generation_Tool
 
+1. To run the application visit
 
-https://bachtses.github.io/Medical-Report-Generation-Tool-First-Prototype/
