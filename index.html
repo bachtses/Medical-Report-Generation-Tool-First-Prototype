@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="icon" href="images/incisive_favicon.jpg">
+
+    <link rel="stylesheet" href="https://bachtses.github.io/Medical-Report-Generation-Tool-First-Prototype/styles.css"> 
+    <!--<link rel="stylesheet" href="styles.css"> -->
+ 
+</head>
+
+
+<body>
+    <!-- start of content -->
+    <div class="content"> 
+        <!-- top border -->
+        <div class="just_a_border">
+        </div>
+        <!-- sitecontainer -->
+        <div class="sitecontainer">
+            <!-- top menu bar -->
+            <div class="top_menu_bar">
+                <img src="images/incisive-header-logo.svg" alt="icon" >
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <div class="info_dropdown">
+                    <p>This is a web app that predicts the probability of each common thorax disease to occur inside a medical image, using trained AI models. 
+                        This app is not yet ready for medical use. It in development stage.</p>
+                </div>
+            </div>
+            <!-- top title -->
+            <div class="top_title">
+                <h3>HOME&nbsp; &nbsp; >&nbsp; &nbsp;  MEDICAL REPORT</h3> 
+                <h1>Medical report</h1>   
+                <h2>Generating automatically a diagnostic report with the usage of AI models.</h2>   
+            </div>
+            <div class="just_another_border">
+                <img src="images/incisive-background.jpg" alt="icon">
+            </div>
+            <!-- all work container  -->
+            <div class="all_work_container" id="all_work_container">
+                <!-- left container  -->
+                <div class="left_container" id="left_container">
+                    <!-- upload Image -->
+                    <div class="image_container" id="idImage">
+                        <img id="initial_image_display" src="https://gitcdn.link/cdn/bachtses/Medical-Report-Generation-Tool-First-Prototype/main/images/initial_image.png">
+                    </div> 
+                    <!-- upload Button -->                
+                    <label for="files_upload" id="btnn"><i class='fa fa-camera'></i> &nbsp; Upload Medical Image</label>
+                    <input disabled type="file" id="files_upload" onchange="showFiles(event)" accept=".jpeg , .jpg , .png"> 
+                    
+                </div> <!-- end of left container  -->
+                <div class="modality_option_container" id="modality_option_container">
+                    <div class="modality_option_text">    
+                        <h1>Please select a medical imaging modality</h1>                
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <i class="fa fa-bars"></i> &nbsp; Modalities
+                            </button>
+                            <div class="dropdown-content" id="modalities_dropdown">
+                                <a >MRI</a>
+                                <a >PET/CT</a>
+                                <a onclick="dropdownSelection()">X-Ray</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right container  -->
+                <div class="right_container" id="right_container">
+                    
+                    <!-- Results Box -->
+                    <p>Medical Report Summary</p>  
+
+                    <h1 id="image_name"></h1>
+                    <h2 id="image_modality"></h2>
+                    <h3 id="findings"></h3>    
+
+                    <div id="divModelDownloadFraction"> 
+                        <div id="progress_bar_container">
+                            <div id="progress_bar"></div>
+                        </div>  
+                        Loading...
+                    </div>
+
+                    <div id="edit" contenteditable="false">
+                        <ol id='prediction_list'>
+                            <li></li>
+                        </ol> 
+                    </div>     
+            
+                    <div class="gridrow" id="gridrow1"></div>
+                    <div class="gridrow" id="gridrow2"></div>
+                    <div class="gridrow" id="gridrow3"></div>
+                    <div class="gridrow" id="gridrow4"></div>
+                    <div class="gridrow" id="gridrow5"></div>
+                    <div class="gridrow" id="gridrow6"></div>
+
+            
+                </div> <!-- end of right container  -->
+            </div> <!-- end of all work container  -->
+
+            <br><br>
+            <!--<canvas id="testCanvas"></canvas>-->
+        </div> <!-- end of sitecontainer -->
+
+        
+
+        <!-- footer -->
+        <div class="footer">
+        </div>
+    
+    </div> <!-- end of content -->
+        
+   
+    <!--<script src="scripts.js"></script>-->
+    <script src="https://bachtses.github.io/Medical-Report-Generation-Tool-First-Prototype/scripts.js"></script>
+
+ 
+</body>
+
+
+<script type="text/javascript"></script>
+</html>
